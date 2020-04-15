@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<meta charset="utf-8" />
+	<style>
+		body{
+			font-family: SimSun;
+		}
+		.biaoti{
+			font-size: 15px;
+			font-weight: bold;
+		}
+		.biaotidiv{
+			position: relative;
+			margin-top: 30px;
+		}
+		.neirongdiv{
+			position: relative;
+			margin-top: 10px;
+			height: 25px;
+			line-height: 25px;
+			font-size: 16px;
+		}
+	</style>
+</head>
+
+<body>
+<!--
+    <span class="biaoti">武汉市公安局警务指挥部指挥调度中心</span>
+    <span class="biaoti">警员6336</span>
+    <span class="biaoti">2020-4-9 15:52:39</span><br />
+    <span class="neirong">警情流水号：20200408T01704703的指令任务超时。</span><br />
+
+-->
+<#list replyList as reply>
+<div class="biaotidiv">
+	<span class="biaoti">${reply.replyStationName}</span>
+	<span class="biaoti">${reply.replyPersonName}</span>
+	<span class="biaoti">${reply.replyTime?string('yyyy-MM-dd HH:mm:ss')}</span><br />
+</div>
+<div class="neirongdiv">${reply.replyContent}
+	<br />---------------------------------------------------------------------------------------------------------------------</div>
+<!--<span class="neirong">${reply.replyContent}</span><br />-->
+<div class="fenge"></div>
+</#list>
+</body>
+</html>
